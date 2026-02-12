@@ -1,0 +1,257 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { ModeToggle } from "@/components/ModeToggle";
+import Logo from "@/components/Logo.astro";
+import { HardHatIcon, StethoscopeIcon, SyringeIcon } from "lucide-react";
+import StatusIndicator from "@/components/ui/status-indicator";
+
+interface Route {
+  title: string;
+  data_section: string;
+  href: string;
+}
+
+const routes: Route[] = [
+  { title: "Home", data_section: "landing", href: "#landing" },
+  { title: "About Us", data_section: "about", href: "#about" },
+  { title: "Advantage", data_section: "advantage", href: "#advantage" },
+];
+---
+
+<BaseLayout
+  title="ODIA Medical"
+  description="Strategic Medical Staffing & Clinical Workforce Solutions"
+>
+  <div class="flex">
+    <!-- Sidebar -->
+    <aside class="flex flex-col w-52 px-10 py-10 h-screen fixed top-0 left-0">
+      <div class="w-20 h-20 border border-accent p-2 bg-slate-600/10">
+        <Logo />
+      </div>
+      <nav class="flex-1 flex flex-col justify-center gap-1">
+        {
+          routes.map((route) => {
+            return (
+              <a
+                data-section={route.data_section}
+                href={route.href}
+                class="nav-section hover:text-primary transition-colors py-2 border-l-2 hover:border-accent-foreground pl-3 -ml-3 text-muted-foreground border-transparent"
+              >
+                {route.title}
+              </a>
+            );
+          })
+        }
+      </nav>
+      <button
+        class="flex border border-accent bg-slate-600/10 py-6 px-4 items-center justify-center"
+      >
+        <StatusIndicator state="active" label="Contact Us" />
+      </button>
+    </aside>
+
+    <!-- main content -->
+    <main
+      class="flex flex-col flex-1 pl-52 pr-20 bg-linear-0 to-slate-300 dark:to-slate-950/70 from-neutral-300/70 dark:from-neutral-900/70 from-0% to-70%"
+    >
+      <!-- landing -->
+      <section
+        id="landing"
+        class="min-h-screen flex items-center justify-center overflow-hidden w-full"
+      >
+        <div class="flex flex-col gap-3 justify-center items-center">
+          <!-- logo -->
+          <div class="flex justify-center items-center -ml-10">
+            <div class="w-52"><Logo /></div>
+            <div class="flex flex-col gap-1">
+              <h1 class="text-9xl font-extralight">
+                <span class="text-accent-foreground">ODIA</span> Med
+              </h1>
+              <div class="text-sm italic font-light pl-5">
+                Physician-Led. Institutional Grade. Precision Focused.
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-xl text-muted-foreground font-normal">
+            Strategic <span class="text-accent-foreground"
+              >Medical Staffing</span
+            > and Clinical <span class="text-accent-foreground"
+              >Workforce Solutions</span
+            >
+          </h2>
+          <div class="flex gap-5 mt-1">
+            <button
+              class="flex w-36 p-3 hover:text-black justify-center items-center bg-primary hover:bg-accent-foreground text-primary-foreground"
+            >
+              For Providers
+            </button>
+            <button
+              class="flex w-36 p-3 border justify-center items-center bg-slate-600/10 hover:border-accent-foreground"
+            >
+              For Employers
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- about us -->
+      <section id="about" class="p-10 px-20">
+        <div class="grid grid-cols-3 gap-6">
+          <!-- who we are -->
+          <div
+            class="flex flex-col col-span-2 border border-accent p-8 gap-3 bg-linear-210 from-slate-950/80 to-neutral-900/50"
+          >
+            <span class="text-sm text-accent-foreground">Who we are</span>
+            <h2 class="text-2xl">
+              A premier clinical staffing partner specializing in the deployment
+              of <span class="font-bold text-accent-foreground"
+                >elite medical talent.</span
+              >
+            </h2>
+            <p class="text-lg text-muted-foreground">
+              Unlike traditional agencies, we are physician-led, ensuring that
+              every placement is grounded in clinical integrity and
+              organizational resilience.
+            </p>
+          </div>
+          <!-- award value -->
+          <div class="flex flex-col p-8 border border-accent h-full gap-3">
+            <span class="text-sm text-muted-foreground">2026 Award Value</span>
+            <h2
+              class="flex text-4xl text-accent-foreground flex-1 items-end wrap-anywhere"
+            >
+              $460,000
+            </h2>
+            <p class="text-sm text-muted-foreground">
+              With <span class="text-accent-foreground">1</span> contract(s)
+            </p>
+          </div>
+
+          <!-- overall features -->
+          <div class="flex flex-col border border-accent p-8 gap-1">
+            <div class="p-3 mb-3 w-fit bg-slate-600/10">
+              <SyringeIcon className="stroke-primary" />
+            </div>
+            <h2 class="flex text-xl flex-1 items-end wrap-normal">
+              Infectious Disease
+            </h2>
+            <p class="text-sm text-muted-foreground">
+              Expert oversight for containment and clinical consultation.
+            </p>
+          </div>
+          <div class="flex flex-col border border-accent p-8 gap-1">
+            <div class="p-3 mb-3 w-fit bg-slate-600/10">
+              <HardHatIcon className="stroke-primary" />
+            </div>
+            <h2 class="flex text-xl flex-1 items-end wrap-normal">
+              Occupational Medicine
+            </h2>
+            <p class="text-sm text-muted-foreground">
+              Workforce safety, compliance, and clinical health surveillance.
+            </p>
+          </div>
+          <div class="flex flex-col border border-accent p-8 gap-1">
+            <div class="p-3 mb-3 w-fit bg-slate-600/10">
+              <StethoscopeIcon className="stroke-primary" />
+            </div>
+            <h2 class="flex text-xl flex-1 items-end wrap-normal">
+              General Medical Staffing
+            </h2>
+            <p class="text-sm text-muted-foreground">
+              High-tier placement for specialized and high-pressure sectors.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- why trust us -->
+      <section id="advantage" class="flex p-10 px-20 h-screen">
+        <div>
+          <h3>Rigorous Vetting</h3><p>
+            Physician-led screening for all clinical staff.
+          </p>
+        </div>
+        <div>
+          <h3>Rapid Deployment</h3><p>
+            Precision matching for urgent institutional needs.
+          </p>
+        </div>
+        <div>
+          <h3>Infectious Disease Expertise</h3><p>
+            Specialized oversight for complex clinical environments.
+          </p>
+        </div>
+      </section>
+
+      <section id="industries" class="p-10">
+        <h2>Sectors We Support</h2>
+        <div class="flex gap-10">
+          <span>Government</span>
+          <span>Hospital Systems</span>
+          <span>Corporate Wellness</span>
+        </div>
+      </section>
+
+      <!-- team -->
+      <section id="team" class="p-10">
+        <h1>Our Team</h1>
+      </section>
+
+      <!-- blog -->
+      <section id="blog" class="p-10">
+        <h1>Blog</h1>
+      </section>
+
+      <!-- footer -->
+      <section id="team" class="p-10">
+        <h1>Our Team</h1>
+      </section>
+    </main>
+
+    <!-- Right Sidebar -->
+    <aside
+      class="flex flex-col gap-4 w-20 px-8 py-10 justify-center items-center h-screen fixed right-0 top-0"
+    >
+      <div class="w-9 h-9 border"></div>
+      <div class="w-9 h-9 border"></div>
+      <div class="w-9 h-9 border"></div>
+      <div class="w-9 h-9 border"></div>
+      <ModeToggle client:load />
+    </aside>
+  </div>
+  <script>
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-section");
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "-20% 0px -70% 0px",
+      threshold: 0,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.id;
+
+          navLinks.forEach((link) => {
+            const linkSection = link.getAttribute("data-section");
+            if (linkSection === sectionId) {
+              link.classList.add("text-primary", "border-accent-foreground");
+              link.classList.remove(
+                "text-muted-foreground",
+                "border-transparent",
+              );
+            } else {
+              link.classList.remove("text-primary", "border-accent-foreground");
+              link.classList.add("text-muted-foreground", "border-transparent");
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach((section) => observer.observe(section));
+  </script>
+</BaseLayout>
