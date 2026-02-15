@@ -2,8 +2,9 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { ModeToggle } from "@/components/ModeToggle";
 import Logo from "@/components/Logo.astro";
-import { HardHatIcon, StethoscopeIcon, SyringeIcon } from "lucide-react";
 import StatusIndicator from "@/components/ui/status-indicator";
+import About from "@/components/About.astro";
+import Landing from "@/components/Landing.astro";
 
 interface Route {
   title: string;
@@ -52,118 +53,13 @@ const routes: Route[] = [
 
     <!-- main content -->
     <main
-      class="flex flex-col flex-1 pl-52 pr-20 bg-linear-0 to-slate-300 dark:to-slate-950/70 from-neutral-300/70 dark:from-neutral-900/70 from-0% to-70%"
+      class="flex flex-col flex-1 justify-center items-center pl-52 pr-20 bg-linear-0 to-slate-300 dark:to-slate-950/70 from-neutral-300/70 dark:from-neutral-900/70 from-0% to-70%"
     >
       <!-- landing -->
-      <section
-        id="landing"
-        class="min-h-screen flex items-center justify-center overflow-hidden w-full"
-      >
-        <div class="flex flex-col gap-3 justify-center items-center">
-          <!-- logo -->
-          <div class="flex justify-center items-center -ml-10">
-            <div class="w-52"><Logo /></div>
-            <div class="flex flex-col gap-1">
-              <h1 class="text-9xl font-extralight">
-                <span class="text-accent-foreground">ODIA</span> Med
-              </h1>
-              <div class="text-sm italic font-light pl-5">
-                Physician-Led. Institutional Grade. Precision Focused.
-              </div>
-            </div>
-          </div>
-
-          <h2 class="text-xl text-muted-foreground font-normal">
-            Strategic <span class="text-accent-foreground"
-              >Medical Staffing</span
-            > and Clinical <span class="text-accent-foreground"
-              >Workforce Solutions</span
-            >
-          </h2>
-          <div class="flex gap-5 mt-1">
-            <button
-              class="flex w-36 p-3 hover:text-black justify-center items-center bg-primary hover:bg-accent-foreground text-primary-foreground"
-            >
-              For Providers
-            </button>
-            <button
-              class="flex w-36 p-3 border justify-center items-center bg-slate-600/10 hover:border-accent-foreground"
-            >
-              For Employers
-            </button>
-          </div>
-        </div>
-      </section>
+      <Landing />
 
       <!-- about us -->
-      <section id="about" class="p-10 px-20">
-        <div class="grid grid-cols-3 gap-6">
-          <!-- who we are -->
-          <div
-            class="flex flex-col col-span-2 border border-accent p-8 gap-3 bg-linear-210 from-slate-950/80 to-neutral-900/50"
-          >
-            <span class="text-sm text-accent-foreground">Who we are</span>
-            <h2 class="text-2xl">
-              A premier clinical staffing partner specializing in the deployment
-              of <span class="font-bold text-accent-foreground"
-                >elite medical talent.</span
-              >
-            </h2>
-            <p class="text-lg text-muted-foreground">
-              Unlike traditional agencies, we are physician-led, ensuring that
-              every placement is grounded in clinical integrity and
-              organizational resilience.
-            </p>
-          </div>
-          <!-- award value -->
-          <div class="flex flex-col p-8 border border-accent h-full gap-3">
-            <span class="text-sm text-muted-foreground">2026 Award Value</span>
-            <h2
-              class="flex text-4xl text-accent-foreground flex-1 items-end wrap-anywhere"
-            >
-              $460,000
-            </h2>
-            <p class="text-sm text-muted-foreground">
-              With <span class="text-accent-foreground">1</span> contract(s)
-            </p>
-          </div>
-
-          <!-- overall features -->
-          <div class="flex flex-col border border-accent p-8 gap-1">
-            <div class="p-3 mb-3 w-fit bg-slate-600/10">
-              <SyringeIcon className="stroke-primary" />
-            </div>
-            <h2 class="flex text-xl flex-1 items-end wrap-normal">
-              Infectious Disease
-            </h2>
-            <p class="text-sm text-muted-foreground">
-              Expert oversight for containment and clinical consultation.
-            </p>
-          </div>
-          <div class="flex flex-col border border-accent p-8 gap-1">
-            <div class="p-3 mb-3 w-fit bg-slate-600/10">
-              <HardHatIcon className="stroke-primary" />
-            </div>
-            <h2 class="flex text-xl flex-1 items-end wrap-normal">
-              Occupational Medicine
-            </h2>
-            <p class="text-sm text-muted-foreground">
-              Workforce safety, compliance, and clinical health surveillance.
-            </p>
-          </div>
-          <div class="flex flex-col border border-accent p-8 gap-1">
-            <div class="p-3 mb-3 w-fit bg-slate-600/10">
-              <StethoscopeIcon className="stroke-primary" />
-            </div>
-            <h2 class="flex text-xl flex-1 items-end wrap-normal">
-              General Medical Staffing
-            </h2>
-            <p class="text-sm text-muted-foreground">
-              High-tier placement for specialized and high-pressure sectors.
-            </p>
-          </div>
-        </div>
-      </section>
+      <About />
 
       <!-- why trust us -->
       <section id="advantage" class="flex p-10 px-20 h-screen">

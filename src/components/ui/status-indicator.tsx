@@ -13,7 +13,7 @@ interface StatusIndicatorProps {
 const getStateColors = (state: StatusIndicatorProps["state"]) => {
   switch (state) {
     case "active":
-      return { dot: "bg-slate-500", ping: "bg-slate-300" };
+      return { dot: "bg-blue-400", ping: "bg-blue-100" };
     case "down":
       return { dot: "bg-red-500", ping: "bg-red-300" };
     case "fixing":
@@ -50,7 +50,7 @@ const StatusIndicator: React.FC<StatusIndicatorProps> = ({
   const sizeClasses = getSizeClasses(size);
 
   return (
-    <div className={cn("flex items-center gap-2", className)}>
+    <div className={cn("flex items-center gap-4", className)}>
       <div className="relative flex items-center">
         {shouldAnimate && (
           <span
@@ -69,16 +69,7 @@ const StatusIndicator: React.FC<StatusIndicatorProps> = ({
           )}
         />
       </div>
-      {label && (
-        <p
-          className={cn(
-            "text-sm text-slate-700 dark:text-slate-300",
-            labelClassName,
-          )}
-        >
-          {label}
-        </p>
-      )}
+      {label && <p className={cn("text-sm", labelClassName)}>{label}</p>}
     </div>
   );
 };

@@ -1,0 +1,57 @@
+---
+import Logo from "@/components/Logo.astro";
+import StatusIndicator from "./ui/status-indicator";
+---
+
+<section
+  id="landing"
+  class="min-h-screen flex flex-col items-center justify-center w-full"
+>
+  <div class="flex flex-col justify-center items-center">
+    <!-- <div
+      class="text-sm tracking-wider border border-blue-400/20 text-blue-400 bg-blue-400/10 p-4 px-6"
+    >
+      Physician-Led. Institutional Grade. Precision Focused.
+    </div> -->
+    <StatusIndicator
+      state="active"
+      label="Waitlist Only: Initial Cohort at Capacity"
+      className="mb-5 border border-blue-300/20  p-4 tracking-wide"
+    />
+
+    <!-- logo -->
+    <div class="flex justify-center items-center -ml-20">
+      <div class="w-52"><Logo /></div>
+      <!-- <div class="flex flex-col gap-1"> -->
+      <h1 class="text-9xl font-extralight tracking-tighter">
+        <span class="text-blue-300 font-light">ODIA</span> Med
+      </h1>
+
+      <!-- </div> -->
+    </div>
+
+    <h2 class="text-xl text-muted-foreground font-normal">
+      Strategic <span class="text-white">Medical Staffing</span> and Seamless
+      <span class="text-blue-300">Locum Tenens</span>
+    </h2>
+  </div>
+
+  <div class="flex gap-28 mt-20">
+    <div class="flex flex-col gap-3 text-center justify-center items-center">
+      <h3 class="text-muted-foreground">Looking for your next contract?</h3>
+      <button
+        class="flex py-3 px-7 hover:cursor-pointer border justify-center items-center border-blue-300/20 bg-slate-600/10 hover:border-blue-300"
+      >
+        For Providers
+      </button>
+    </div>
+    <div class="flex flex-col gap-3 text-center justify-center items-center">
+      <h3 class="text-muted-foreground">Looking for Talent?</h3>
+      <button
+        class="flex py-3 px-7 hover:cursor-pointer border justify-center items-center border-blue-300/20 hover:border-blue-300"
+      >
+        For Employers
+      </button>
+    </div>
+  </div>
+</section>

@@ -1,1 +1,72 @@
-<div>about us sdf</div>
+---
+import { HardHatIcon, StethoscopeIcon, SyringeIcon } from "lucide-react";
+---
+
+<section id="about" class="w-7xl p-10 px-20">
+  <div class="grid grid-cols-3 gap-6">
+    <!-- who we are -->
+    <div
+      class="flex flex-col col-span-2 border border-accent p-8 gap-3 bg-linear-210 from-slate-950/80 to-neutral-900/50"
+    >
+      <span class="text-sm text-accent-foreground">Who we are</span>
+      <h2 class="text-2xl">
+        A specialized staffing firm dedicated to <span
+          class="font-bold text-accent-foreground">locum tenens</span
+        > and <span class="font-bold text-accent-foreground"
+          >medical contract placement.</span
+        >
+      </h2>
+      <p class="text-lg text-muted-foreground">
+        As a physician-led organization, we bridge the gap between elite
+        clinicians and high-stakes healthcare facilities. We don't just fill
+        shifts; we deploy vetted experts to ensure clinical integrity and
+        operational continuity
+      </p>
+    </div>
+    <!-- award value -->
+    <div class="flex flex-col p-8 border border-accent h-full gap-3">
+      <span class="text-sm text-muted-foreground">2026 Award Value</span>
+      <h2
+        class="flex text-4xl text-accent-foreground flex-1 items-end wrap-anywhere"
+      >
+        $460,000
+      </h2>
+      <p class="text-sm text-muted-foreground">
+        With <span class="text-accent-foreground">1</span> contract(s)
+      </p>
+    </div>
+
+    <!-- overall features -->
+    <div class="flex flex-col border border-accent p-8 gap-1">
+      <div class="p-3 mb-3 w-fit bg-slate-600/10">
+        <SyringeIcon className="stroke-primary" />
+      </div>
+      <h2 class="flex text-xl flex-1 items-end wrap-normal">
+        Infectious Disease
+      </h2>
+      <p class="text-sm text-muted-foreground">
+        Specialized ID staffing for institutional oversight and crisis response.
+      </p>
+    </div>
+    <div class="flex flex-col border border-accent p-8 gap-1">
+      <div class="p-3 mb-3 w-fit bg-slate-600/10">
+        <HardHatIcon className="stroke-primary" />
+      </div>
+      <h2 class="flex text-xl flex-1 items-end wrap-normal">
+        Occupational Medicine
+      </h2>
+      <p class="text-sm text-muted-foreground">
+        Contract providers for workforce safety and regulatory compliance.
+      </p>
+    </div>
+    <div class="flex flex-col border border-accent p-8 gap-1">
+      <div class="p-3 mb-3 w-fit bg-slate-600/10">
+        <StethoscopeIcon className="stroke-primary" />
+      </div>
+      <h2 class="flex text-xl flex-1 items-end wrap-normal">Locum Tenens</h2>
+      <p class="text-sm text-muted-foreground">
+        High-tier placement for specialized and high-pressure sectors.
+      </p>
+    </div>
+  </div>
+</section>
